@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfCalculator"
         mc:Ignorable="d"
-        Title="WPF Calculator Application" Height="550" Width="450" Background="Black">
+        Title="WPF Calculator Application" Height="550" Width="400" Background="Black">
     <Grid>
 
         <Grid.RowDefinitions>
@@ -18,6 +18,7 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
 
+            <RowDefinition Height="40px"></RowDefinition>
             <RowDefinition Height="10px"></RowDefinition>
         </Grid.RowDefinitions>
 
@@ -31,31 +32,35 @@
         </Grid.ColumnDefinitions>
         
         <Border Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="4" Background="White" Margin="0,0,0,10"></Border>
-        
-        <TextBlock Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3"
-                   Text="Calculations displayed here" Background="White" 
+        <TextBlock x:Name="FunctionTextBox" Grid.Column="1" Grid.Row="1" Text="" Margin="10,0,0,10"
+                   VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="22" FontWeight="Bold">
+        </TextBlock>
+        <TextBlock x:Name="DisplayTextBox" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3"
+                   Text="" Background="White" 
                    VerticalAlignment="Center" Margin="0, 0, 5, 10" HorizontalAlignment="Right" 
                    FontSize="22" FontWeight="Bold">
         </TextBlock>
-        <Button Grid.Column="1" Grid.Row="2" Content="7" FontSize="40" Background="DimGray" Foreground="White"></Button>
-        <Button Grid.Column="2" Grid.Row="2" Content="8" FontSize="40" Background="DimGray" Foreground="White"></Button>
-        <Button Grid.Column="3" Grid.Row="2" Content="9" FontSize="40" Background="DimGray" Foreground="White"></Button>
-        <Button Grid.Column="4" Grid.Row="2" Content="/" FontSize="40" Background="LightBlue"></Button>
+        <Button Grid.Column="1" Grid.Row="2" Content="7" FontSize="40" Background="DimGray" Foreground="White" Click="Number_Button_Click"></Button>
+        <Button Grid.Column="2" Grid.Row="2" Content="8" FontSize="40" Background="DimGray" Foreground="White" Click="Number_Button_Click"></Button>
+        <Button Grid.Column="3" Grid.Row="2" Content="9" FontSize="40" Background="DimGray" Foreground="White" Click="Number_Button_Click"></Button>
+        <Button x:Name="DivideButton" Grid.Column="4" Grid.Row="2" Content="/" FontSize="40" Background="LightBlue" Click="Operator_Function"></Button>
 
-        <Button Grid.Column="1" Grid.Row="3" Content="4" FontSize="40" Background="DimGray" Foreground="White"></Button>
-        <Button Grid.Column="2" Grid.Row="3" Content="5" FontSize="40" Background="DimGray" Foreground="White"></Button>
-        <Button Grid.Column="3" Grid.Row="3" Content="6" FontSize="40" Background="DimGray" Foreground="White"></Button>
-        <Button Grid.Column="4" Grid.Row="3" Content="x" FontSize="40" Background="LightBlue"></Button>
+        <Button Grid.Column="1" Grid.Row="3" Content="4" FontSize="40" Background="DimGray" Foreground="White" Click="Number_Button_Click"></Button>
+        <Button Grid.Column="2" Grid.Row="3" Content="5" FontSize="40" Background="DimGray" Foreground="White" Click="Number_Button_Click"></Button>
+        <Button Grid.Column="3" Grid.Row="3" Content="6" FontSize="40" Background="DimGray" Foreground="White" Click="Number_Button_Click"></Button>
+        <Button x:Name="MultiplyButton" Grid.Column="4" Grid.Row="3" Content="*" FontSize="40" Background="LightBlue" Click="Operator_Function"></Button>
 
-        <Button Grid.Column="1" Grid.Row="4" Content="1" FontSize="40" Background="DimGray" Foreground="White"></Button>
-        <Button Grid.Column="2" Grid.Row="4" Content="2" FontSize="40" Background="DimGray" Foreground="White"></Button>
-        <Button Grid.Column="3" Grid.Row="4" Content="3" FontSize="40" Background="DimGray" Foreground="White"></Button>
-        <Button Grid.Column="4" Grid.Row="4" Content="-" FontSize="40" Background="LightBlue"></Button>
+        <Button Grid.Column="1" Grid.Row="4" Content="1" FontSize="40" Background="DimGray" Foreground="White" Click="Number_Button_Click"></Button>
+        <Button Grid.Column="2" Grid.Row="4" Content="2" FontSize="40" Background="DimGray" Foreground="White" Click="Number_Button_Click"></Button>
+        <Button Grid.Column="3" Grid.Row="4" Content="3" FontSize="40" Background="DimGray" Foreground="White" Click="Number_Button_Click"></Button>
+        <Button x:Name="SubtractButton" Grid.Column="4" Grid.Row="4" Content="-" FontSize="40" Background="LightBlue" Click="Operator_Function"></Button>
 
-        <Button Grid.Column="1" Grid.Row="5" Content="0" FontSize="40" Background="DimGray" Foreground="White"></Button>
-        <Button Grid.Column="2" Grid.Row="5" Content="." FontSize="40" Background="DimGray" Foreground="White"></Button>
-        <Button Grid.Column="3" Grid.Row="5" Content="=" FontSize="40" Background="OrangeRed" ></Button>
-        <Button Grid.Column="4" Grid.Row="5" Content="+" FontSize="40" Background="LightBlue"></Button>
+        <Button Grid.Column="1" Grid.Row="5" Content="0" FontSize="40" Background="DimGray" Foreground="White" Click="Number_Button_Click"></Button>
+        <Button Grid.Column="2" Grid.Row="5" Content="." FontSize="40" Background="DimGray" Foreground="White" Click="Number_Button_Click"></Button>
+        <Button x:Name="EqualsButton" Grid.Column="3" Grid.Row="5" Content="=" FontSize="40" Background="OrangeRed" Click="Equals_Button_Click" ></Button>
+        <Button x:Name="AdditionButton" Grid.Column="4" Grid.Row="5" Content="+" FontSize="40" Background="LightBlue" Click="Operator_Function"></Button>
 
+        <Button x:Name="ClsButton" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="4" Content="Clear Screen"
+                FontSize="20" FontWeight="Bold" Margin="0,5,0,0" Click="Cls_Button_Click"></Button>
     </Grid>
 </Window>
