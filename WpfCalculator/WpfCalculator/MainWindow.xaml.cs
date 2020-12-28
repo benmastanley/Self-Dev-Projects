@@ -24,6 +24,7 @@ namespace WpfCalculator
             // Need to fix 3+ number calculations i.e. (12 * 6 - 14 + 40)
             // change functions to one function method, and get operator by button name
             // Add further calculator options i.e. brackets, clear screen/cancel, square, sqr rt, log etc....
+            // UNIT TESTS...
         double temp = 0;
         double result = 0;
         bool screenNeedsClearing = true;
